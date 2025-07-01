@@ -1,0 +1,114 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.px-pages {
+  position: relative;
+  height: 100vh;
+}
+
+.px-slider-section {
+  background: #15181a;
+  font-family: "PT Sans", sans-serif;
+  overflow: hidden;
+}
+
+.px-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.px-page .half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  transition: transform 1s;
+}
+.px-page .half--left {
+  left: 0;
+  transform: translate3d(-32.4vh, 100%, 0);
+}
+.px-page .half--right {
+  left: 50%;
+  transform: translate3d(32.4vh, -100%, 0);
+}
+.px-page .half .skewed {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 140%;
+  height: 100%;
+  transform: skewX(-18deg);
+  background: #000;
+}
+.px-page .half.half--left .skewed {
+  left: -40%;
+}
+.px-page .half.half--right .skewed {
+  right: -40%;
+}
+.px-page .half .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 30%;
+  color: #fff;
+  transform: skewX(18deg);
+  transition: transform 1s, opacity 1s;
+  background-size: cover;
+}
+.px-page .half.half--left .content {
+  padding-left: 30%;
+  padding-right: 30%;
+  transform-origin: 100% 0;
+}
+.px-page .half.half--right .content {
+  padding-left: 30%;
+  padding-right: 30%;
+  transform-origin: 0 100%;
+}
+.px-page .heading {
+  position: relative;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.px-page .description {
+  position: relative;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+.px-page hr {
+  border: none;
+  background-color: #fff;
+  height: 1px;
+}
+.px-page .link {
+  color: #ffa0a0;
+}
+
+.px-page.active .half {
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-me h1 {
+  margin: 150px auto;
+  text-align: center;
+  color: #969696;
+}
